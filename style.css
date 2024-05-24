@@ -1,8 +1,10 @@
-
-
 :root {
     --primary-color: #635bff;
     --secondary: #0a2540;
+    --width-container: 100%;
+    --width-cont: 100%;
+    --width-card: 17rem;
+    --width-img: 100%;
 }
 
 body {
@@ -25,14 +27,17 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 90%;
+    max-width: var(--width-container);
     gap: 1rem;
+    border: red dashed;
 }
 
 .content {
     height: 16rem;
+    width: var(--width-cont); 
     padding: 1.5rem;
     flex-grow: 1;
+    border: green dashed;
 }
 
 .card {
@@ -46,20 +51,28 @@ body {
     background-color: white;
     cursor: pointer;
     width: 100%;
-    flex-basis: 20rem;
+    flex-basis: var(--width-card); /* ancho de la tarjeta inicialmente*/
     padding: 0.25rem;
-    min-height: 30rem;
+    min-height: 35rem; /*height minimo para la primera tarjeta*/
     transition: all 0.2s ease-in-out;
+    border: purple dashed;
+    border-radius: 20px;
 }
 
-.content > h1 {
-    font-size: 2rem;
+.content > h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.content > h3 {
+    font-size: 1.0rem;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
 
 .content > p {
-    font-size: 1.125rem;
+    font-size: 0.9125rem;
     line-height: 1.55;
     font-weight: 500;
 }
@@ -84,9 +97,10 @@ body {
 }
 
 .card-background img {
-    width: 100%;
+    width: var(--width-img);
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .card:hover .action-bottom-bar a {
